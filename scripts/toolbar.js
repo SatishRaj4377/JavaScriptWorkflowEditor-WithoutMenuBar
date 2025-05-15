@@ -74,6 +74,7 @@ input.addEventListener("change", function (e) {
   reader.onload = function (evt) {
     var json = JSON.parse(evt.target.result);
     window.diagram.loadDiagram(json);
+    input.value = "";
   };
   reader.readAsText(file);
 });
@@ -82,7 +83,7 @@ input.addEventListener("change", function (e) {
 (function () {
   // Helper to toggle the Execute button among Execute, Pause, Resume
   function updateExecuteButton(state) {
-    const btn = toolbarObj.items[0];
+    const btn = toolbarObj.items[4];
     if (state === "Pause") {
       btn.id = "Pause";
       btn.text = "Pause";
