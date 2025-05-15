@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+#editorHeader{
+  background-color: #046AE5;
+  display: flex;
+  flex-direction: column;
+}
+
+#diagramTitle {
+  margin: .5rem 1.1rem .3rem;
+  font-size: .8rem;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  width: 250px;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+#diagramTitle:focus {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+#menubar, #toolbar {
+  margin-left: .3rem;
+}
+#toolbar {
+  background-color: #e3e3e3;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.e-toolbar, .e-toolbar .e-toolbar-items, .e-toolbar .e-toolbar-item .e-tbar-btn {
+  background-color: transparent;
+  border-color: transparent !important;
+}
+
+.e-toolbar-items {
+  gap: .5rem;
+}
+
+.palette-toolbar{
+  display: flex;
+  background-color: #e3e3e3;
+  /* height: 47px !important; */
+}
+
+#symbolPalette {
+  overflow: hidden !important;
+  height: 100%; 
+  width: 20% !important;
+  display: flex;
+  align-items: center;
+  margin-left: -40px;
+}
+#symbolPalette .e-acrdn-header{
+  display: none;
+}
+#symbolPalette .e-acrdn-content{
+  padding: 0;
+}
+#symbolPalette .e-remove-palette{
+  background-color: #e3e3e3;
+}
+#main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+#diagramContainer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#diagramcontent {
+  overflow: hidden !important;
+}
+
+.loading-indicator {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: spin 2s linear infinite;
+}
+
+.tick {
+  display: none;
+  animation: showTick 0.5s forwards;
+  font-size: 10px;
+  width: 15px;
+  height: 15px;
+  padding-left: 2.5px;
+  padding-top: 2.5px;
+  line-height: 1;
+  color: white;
+  border-radius: 50%;
+  background-color: green;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes showTick {
+  0% {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+
+/* Menu Bar Customization - Start */
+
+.db-menu-style {
+  float: left;
+  margin-right: 0px;
+}
+
+.db-menu-style .e-dropdown-btn {
+  font-size: 12px;
+  font-weight: 400;
+  background-color: transparent;
+  color:#ffffff;
+  height: 28px;
+}
+
+.db-menu-style .e-dropdown-btn.e-btn-hover,
+.db-menu-style .e-dropdown-btn:hover {
+  background-color: #ffffff;
+  color: #046AE5;
+  box-shadow: 0 0 0 0;
+}
+
+.e-dropdown-popup,
+.e-contextmenu-wrapper ul.e-contextmenu  {
+  border: 0.5px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.e-dropdown-popup ul {
+  min-width: 150px;
+  font-size: 12px;
+  padding: 0px;
+}
+
+.e-dropdown-popup .e-contextmenu {
+  width: 225px;
+}
+
+.e-dropdown-popup ul .e-item,
+.e-contextmenu-wrapper ul .e-menu-item {
+  height: 24px;
+  line-height: 24px;
+  padding: 0px 8px;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item.e-separator,
+.e-dropdown-popup ul .e-item.e-separator {
+  margin: 0px;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item .e-menu-icon,
+.e-dropdown-popup ul .e-item .e-menu-icon {
+  font-size: 12px;
+  line-height: 24px;
+  margin-right: 8px;
+  color:#888888;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item.e-blankicon,
+.e-dropdown-popup ul .e-item.e-blank-icon {
+  padding-left: 28px;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item .e-caret {
+  line-height: 24px;
+  font-size: 12px;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item.e-focused,
+.e-dropdown-popup ul .e-item:hover {
+  background-color: #E4F0FE;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.e-contextmenu-wrapper ul .e-menu-item.e-selected,
+.e-dropdown-popup ul .e-item:active {
+  background-color: #F0F0F0;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.db-menu-style .e-btn-icon {
+  display: none;
+}
+
+
+/* Toolbar Styles */
+.e-toolbar .e-toolbar-item .e-tbar-btn:focus {
+  background-color: transparent;
+}
+
+.e-tbar-btn.e-tbtn-txt.e-control.e-btn.e-lib.tb-item-selected {
+  background-color: #0078D4 !important;
+}
+
+.tb-item-selected .e-btn-icon,
+.tb-item-selected .e-tbar-btn-text {
+  color: white !important;
+}
+
+.e-tbar-btn:hover {
+  background-color: rgba(0,0,0,.12) !important;
+}
+
+.e-tbar-btn:active {
+  transform: scale(0.96);
+  background-color: rgba(0,0,0,.2) !important;
+  transition: transform 0.1s ease;
+}
+
+.e-diagram-userhandle-circle:hover,
+.e-diagram-userhandle-path:hover {
+  cursor: pointer !important;
+}
+
+.e-toolbar .e-toolbar-item.e-separator {
+    border: solid rgba(0, 0, 0, .32);
+    border-width: 0 1px 0 0;
+}

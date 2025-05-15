@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.syncfusion.com/ej2/29.1.33/dist/ej2.min.js" type="text/javascript"></script>
+    <link href="https://cdn.syncfusion.com/ej2/29.1.33/material.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="https://cdn.syncfusion.com/ej2/syncfusion-helper.js" type ="text/javascript"></script>
+    <title>Essential JS2 for Javascript - WorkFlow Editor</title>
+</head>
+<body>
+<!-- In the body section -->
+<header id="editorHeader">
+    <!-- <h1 id="diagramTitle" contenteditable="true">Untitled Diagram</h1>
+    <div id="menubar">
+        <div class="db-menu-style">
+            <button id="btnFileMenu"></button>
+        </div>
+        <div class="db-menu-style">
+            <button id="btnEditMenu"></button>
+        </div>
+        <div class="db-menu-style">
+            <button id="btnSelectMenu"></button>
+        </div>
+        <div class="db-menu-style">
+            <button id="btnViewMenu"></button>
+        </div>
+    </div> -->
+    <div class="palette-toolbar">
+        <div id="toolbar">
+        </div>
+        <aside id="symbolPalette"></aside> <!-- Ensure it's after toolbar buttons -->
+    </div>
+</header>
+<div id="main">
+    <section id="diagramContainer">
+        <div id="diagram"></div>
+    </section>
+</div>
+    <script src="scripts/menubar.js"></script>
+    <script src="scripts/toolbar.js"></script>
+    <script src="scripts/palette.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

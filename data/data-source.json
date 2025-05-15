@@ -1,0 +1,193 @@
+{
+  "foodProductionWorkflow": {
+    "nodes": [
+      {
+        "id": "start",
+        "offsetX": 100,
+        "offsetY": 380,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Event",
+          "event": { "event": "Start", "trigger": "None" }
+        },
+        "annotations": [{ "content": "Start" }]
+      },
+      {
+        "id": "liquidInput",
+        "offsetX": 300,
+        "offsetY": 280,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Liquid Input" }]
+      },
+      {
+        "id": "dryInput",
+        "offsetX": 300,
+        "offsetY": 480,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Dry Input" }]
+      },
+      {
+        "id": "condensed",
+        "offsetX": 500,
+        "offsetY": 180,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Condensed" }]
+      },
+      {
+        "id": "cream",
+        "offsetX": 500,
+        "offsetY": 260,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Cream" }]
+      },
+      {
+        "id": "caneSugar",
+        "offsetX": 500,
+        "offsetY": 340,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Cane Sugar" }]
+      },
+      {
+        "id": "water",
+        "offsetX": 500,
+        "offsetY": 420,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Water" }]
+      },
+      {
+        "id": "ingredients",
+        "offsetX": 500,
+        "offsetY": 500,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Ingredients" }]
+      },
+      {
+        "id": "flavour",
+        "offsetX": 500,
+        "offsetY": 580,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Flavour" }]
+      },
+      {
+        "id": "fruitsAndNuts",
+        "offsetX": 500,
+        "offsetY": 660,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Fruits and Nuts" }]
+      },
+      {
+        "id": "blending",
+        "offsetX": 700,
+        "offsetY": 380,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Blending" }]
+      },
+      {
+        "id": "coolingAging",
+        "offsetX": 840,
+        "offsetY": 380,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Cooling/Aging" }]
+      },
+      {
+        "id": "packaging",
+        "offsetX": 980,
+        "offsetY": 380,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Packaging" }]
+      },
+      {
+        "id": "storageDistribution",
+        "offsetX": 1130,
+        "offsetY": 380,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Activity",
+          "activity": { "activity": "Task" }
+        },
+        "annotations": [{ "content": "Storage/Distribution" }]
+      },
+      {
+        "id": "end",
+        "offsetX": 1260,
+        "offsetY": 380,
+        "shape": {
+          "type": "Bpmn",
+          "shape": "Event",
+          "event": { "event": "End", "trigger": "None" }
+        },
+        "annotations": [{ "content": "End" }]
+      }
+    ],
+    "connectors": [
+      { "id": "c1",  "sourceID": "start",            "targetID": "liquidInput" },
+      { "id": "c2",  "sourceID": "start",            "targetID": "dryInput" },
+      { "id": "c3",  "sourceID": "liquidInput",      "targetID": "condensed" },
+      { "id": "c4",  "sourceID": "liquidInput",      "targetID": "cream" },
+      { "id": "c5",  "sourceID": "liquidInput",      "targetID": "caneSugar" },
+      { "id": "c6",  "sourceID": "liquidInput",      "targetID": "water" },
+      { "id": "c7",  "sourceID": "liquidInput",      "targetID": "ingredients" },
+      { "id": "c8",  "sourceID": "dryInput",         "targetID": "flavour" },
+      { "id": "c9",  "sourceID": "dryInput",         "targetID": "fruitsAndNuts" },
+      { "id": "c10", "sourceID": "condensed",        "targetID": "blending" },
+      { "id": "c11", "sourceID": "cream",            "targetID": "blending" },
+      { "id": "c12", "sourceID": "caneSugar",        "targetID": "blending" },
+      { "id": "c13", "sourceID": "water",            "targetID": "blending" },
+      { "id": "c14", "sourceID": "ingredients",      "targetID": "blending" },
+      { "id": "c15", "sourceID": "flavour",          "targetID": "blending" },
+      { "id": "c16", "sourceID": "fruitsAndNuts",    "targetID": "blending" },
+      { "id": "c17", "sourceID": "blending",         "targetID": "coolingAging" },
+      { "id": "c18", "sourceID": "coolingAging",     "targetID": "packaging" },
+      { "id": "c19", "sourceID": "packaging",        "targetID": "storageDistribution" },
+      { "id": "c20", "sourceID": "storageDistribution","targetID": "end" }
+    ]
+  }
+}
