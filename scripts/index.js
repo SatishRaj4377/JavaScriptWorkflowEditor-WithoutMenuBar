@@ -180,8 +180,7 @@ function startWorkflow() {
   if (!isPaused && animationIntervals.length) {
     isPaused = true;
     window.updateExecuteButton('Resume');
-    animationIntervals.forEach(clearInterval);
-    animationIntervals.length = 0;
+    clearAnimationIntervals();
     return;
   }
 
@@ -283,7 +282,6 @@ function animateNode(nodeId) {
               targetNode.shape?.event?.event === "End"
             ) {
               window.updateExecuteButton("Execute");
-              animationIntervals.forEach(clearInterval);
               animationIntervals.length = 0; // Reset the array
             } else {
               animateNode(targetNodeId);
@@ -350,11 +348,11 @@ function createLoadingAnimation(targetNode) {
 }
 
 function resetWorkflow(fullReset = true) {
+  isPaused = false;
   clearTimeout(flowTimeOut1);
   clearTimeout(flowTimeOut2);
 
-  animationIntervals.forEach(clearInterval);
-  animationIntervals.length = 0; // Reset the array
+  clearAnimationIntervals()
 
   // Clear all custom animations, ticks, and spinners
   document.querySelectorAll('.loading-indicator, .tick').forEach(el => {
@@ -383,4 +381,9 @@ function resetWorkflow(fullReset = true) {
     // Reload the diagram with the default layout
     loadDiagramLayout(currentDiagramLayout);
   }
+}
+
+function clearAnimationIntervals(){
+  animationIntervals.forEach(clearInterval);
+  animationIntervals.length = 0; // Reset the array
 }

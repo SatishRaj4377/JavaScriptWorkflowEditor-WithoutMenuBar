@@ -93,9 +93,9 @@ body {
   overflow: hidden;
 }
 
-#diagramcontent {
+/* #diagramcontent {
   overflow: hidden !important;
-}
+} */
 
 .loading-indicator {
   border: 4px solid #e6ffe6;
@@ -235,7 +235,9 @@ body {
 .e-tbar-btn.e-tbtn-txt.e-control.e-btn.e-lib.tb-item-selected {
   background-color: #0078D4 !important;
 }
-
+.e-tbar-btn.e-tbtn-txt.e-control.e-btn.e-lib{
+  padding-right: .5rem;
+}
 .tb-item-selected .e-btn-icon,
 .tb-item-selected .e-tbar-btn-text {
   color: white !important;

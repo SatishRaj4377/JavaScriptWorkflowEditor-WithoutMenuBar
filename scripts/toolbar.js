@@ -74,6 +74,9 @@ input.addEventListener("change", function (e) {
   reader.onload = function (evt) {
     var json = JSON.parse(evt.target.result);
     window.diagram.loadDiagram(json);
+    updateExecuteButton('Execute');
+    clearAnimationIntervals();
+    diagram.tool = ej.diagrams.DiagramTools.ZoomPan;
     input.value = "";
   };
   reader.readAsText(file);
@@ -150,6 +153,7 @@ var selectedTool = "Pan";
           break;
         case "Clear":
           updateExecuteButton("Execute");
+          clearAnimationIntervals();
           diagram.clear();
           break;
         case "Select":
