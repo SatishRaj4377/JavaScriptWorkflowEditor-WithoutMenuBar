@@ -328,20 +328,25 @@ function animateConnector(connector, callback) {
   animationIntervals.push(flowInterval);
 }
 
-
 function createLoadingAnimation(targetNode) {
-  var newNode = {
-    id: randomId(),
-    width: 15,
-    height: 15,
-    offsetX: targetNode.wrapper.bounds.left + 1,
-    offsetY: targetNode.wrapper.bounds.top + 2,
-    shape: {
-      type: 'HTML',
-      content: '<div style="display: flex; flex-direction: column; align-items: center;"><div class="loading-indicator"></div><div class="tick"><i class="e-icons e-check-2"></i></div></div>'
-    }
+  if (!targetNode || !targetNode.annotations) {
+    return;
+  }
+
+ const htmlTemplate = `
+    <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; margin-left: -3px; margin-top: -3px;">
+      <div class="loading-indicator"></div>
+      <div class="tick" style="display: none;"><i class="e-icons e-check-2"></i></div>
+    </div>`;
+  const annotation = {
+    template: htmlTemplate,
+    offset: { x: 0, y: 0 },
+    verticalAlignment: 'Top',
+    horizontalAlignment: 'Left',
+    style: { fill: 'transparent' },
   };
-  diagram.add(newNode);
+
+  diagram.addLabels(targetNode, [annotation]);
 }
 
 function resetWorkflow(fullReset = true) {
