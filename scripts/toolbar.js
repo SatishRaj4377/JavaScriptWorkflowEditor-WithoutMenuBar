@@ -33,12 +33,6 @@ var toolbarItems = [
     tooltipText: "Delete Selected",
     prefixIcon: "e-icons e-delete-2",
   },
-  {
-    id: "Clear",
-    text: "Clear",
-    tooltipText: "Clear Diagram",
-    prefixIcon: "e-icons e-erase",
-  },
   { type: "Separator" },
   {
     id: "Select",
@@ -129,6 +123,8 @@ var selectedTool = "Pan";
       selectToolbarItem(args);
       switch (args.item.id) {
         case "New":
+          updateExecuteButton("Execute");
+          clearAnimationIntervals();
           diagram.clear();
           break;
         case "Open":
@@ -150,11 +146,6 @@ var selectedTool = "Pan";
         case "Delete":
           diagram.selectedItems.nodes.forEach(n => diagram.remove(n));
           diagram.selectedItems.connectors.forEach(c => diagram.remove(c));
-          break;
-        case "Clear":
-          updateExecuteButton("Execute");
-          clearAnimationIntervals();
-          diagram.clear();
           break;
         case "Select":
           diagram.tool = ej.diagrams.DiagramTools.MulipleSelect;
