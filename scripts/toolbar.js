@@ -79,6 +79,7 @@ input.addEventListener("change", function (e) {
   reader.readAsText(file);
 });
 
+var selectedTool = "Pan";
 
 (function () {
   // Helper to toggle the Execute button among Execute, Pause, Resume
@@ -102,6 +103,7 @@ input.addEventListener("change", function (e) {
       btn.prefixIcon = "e-icons e-play";
     }
     toolbarObj.refresh();
+    document.getElementById(selectedTool).classList.add("tb-item-selected");
   }
 
   function selectToolbarItem(args) {
@@ -152,9 +154,11 @@ input.addEventListener("change", function (e) {
           break;
         case "Select":
           diagram.tool = ej.diagrams.DiagramTools.MulipleSelect;
+          selectedTool = "Select";
           break;
         case "Pan":
           diagram.tool = ej.diagrams.DiagramTools.ZoomPan;
+          selectedTool = "Pan";
           break;
       }
     },

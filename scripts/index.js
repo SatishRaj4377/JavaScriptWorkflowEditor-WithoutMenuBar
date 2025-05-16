@@ -297,7 +297,7 @@ function animateNode(nodeId) {
 
 function animateConnector(connector, callback) {
   const lastAnn = connector.annotations[connector.annotations.length - 1];
-  lastAnn.offset = lastAnn.offset || 0;
+  lastAnn.offset = lastAnn.offset || 0.02;
   lastAnn.content = '●';
   lastAnn.style.color = connectorAnnotationColor;
   diagram.dataBind();
