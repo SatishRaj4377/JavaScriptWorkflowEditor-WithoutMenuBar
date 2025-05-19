@@ -70,7 +70,7 @@ body {
   width: 20% !important;
   display: flex;
   align-items: center;
-  margin-left: -12.7rem;
+  margin-right: auto;
 }
 #symbolPalette .e-acrdn-header{
   display: none;
@@ -96,7 +96,7 @@ body {
 /* Toggle Switch Styles */
 
 /* Position switch in top-right corner */
-.mode-toggle-container{
+#switch-container{
     z-index: 1000;
     margin-right: 13px;
     display: flex;
@@ -138,7 +138,7 @@ body {
 }
 
 .e-switch-wrapper .e-switch-off{
-  background-color: white !important;
+  background-color: gray !important;
 }
 
 /* #diagramcontent {

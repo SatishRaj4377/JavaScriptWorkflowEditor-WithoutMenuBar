@@ -46,11 +46,6 @@ var toolbarItems = [
     tooltipText: "Pan Tool",
     prefixIcon: "e-icons e-pan",
   },
-  { type: "Separator" },
-  {
-    id: "empty",
-    text: "",
-  },
 ];
 
 // Hidden file input for JSON import
