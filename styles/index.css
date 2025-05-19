@@ -16,7 +16,6 @@ body {
 }
 
 #editorHeader{
-  background-color: #046AE5;
   display: flex;
   flex-direction: column;
 }
@@ -44,7 +43,6 @@ body {
 }
 #toolbar {
   background-color: #e3e3e3;
-  height: 48px;
   display: flex;
   align-items: center;
 }
@@ -61,7 +59,9 @@ body {
 .palette-toolbar{
   display: flex;
   background-color: #e3e3e3;
-  /* height: 47px !important; */
+  align-items: center;
+  justify-content: space-between;
+  height: 47px;
 }
 
 #symbolPalette {
@@ -70,7 +70,7 @@ body {
   width: 20% !important;
   display: flex;
   align-items: center;
-  margin-left: -40px;
+  margin-left: -12.7rem;
 }
 #symbolPalette .e-acrdn-header{
   display: none;
@@ -91,6 +91,54 @@ body {
   flex: 1;
   position: relative;
   overflow: hidden;
+}
+
+/* Toggle Switch Styles */
+
+/* Position switch in top-right corner */
+.mode-toggle-container{
+    z-index: 1000;
+    margin-right: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mode-label{
+  margin: 0 5px;
+  font-size: 14px;
+  color: rgba(0,0,0,.87);
+}
+
+/* Set the switch background to white */
+.e-switch-wrapper.custom-switch .e-switch-inner {
+    background-color: white !important;
+    border: none !important;
+}
+
+/* Set the handle color to blue */
+.e-switch-wrapper.custom-switch .e-switch-handle {
+    background-color: #0078d4 !important; /* Bootstrap primary blue */
+    border: none !important;
+}
+
+/* Maintain handle color on hover, focus, and active states */
+.e-switch-wrapper.custom-switch .e-switch-handle:hover,
+.e-switch-wrapper.custom-switch .e-switch-handle:focus,
+.e-switch-wrapper.custom-switch .e-switch-handle:active {
+    background-color: #0078d4 !important;
+    border: none !important;
+}
+
+.e-switch-wrapper.custom-switch {
+  height: 16px;
+}
+
+.e-switch-wrapper .e-switch-on{
+  background-color: white !important;
+}
+
+.e-switch-wrapper .e-switch-off{
+  background-color: white !important;
 }
 
 /* #diagramcontent {
@@ -261,4 +309,8 @@ body {
 .e-toolbar .e-toolbar-item.e-separator {
     border: solid rgba(0, 0, 0, .32);
     border-width: 0 1px 0 0;
+}
+
+.e-toolbar .e-toolbar-item.e-overlay{
+  background-color: transparent !important;
 }
